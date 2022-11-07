@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Build project with setuptool
         run: |
-          python3 -m pip install .[]
+          python3 -m pip install .
           python3 setup.py bdist_wheel
 
       - uses: "marvinpinto/action-automatic-releases@latest"
