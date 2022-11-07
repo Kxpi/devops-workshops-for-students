@@ -10,14 +10,14 @@ jobs:
     name: "Pre Release"
     runs-on: ubuntu-20.04
 
-  steps:
-    - name: Build project with setuptool
+    steps:
+      - name: Build project with setuptool
         run: |
           python3 -m pip install .[]
           python3 setup.py bdist_wheel
 
-    - uses: "marvinpinto/action-automatic-releases@latest"
-      with:
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
           files: |
