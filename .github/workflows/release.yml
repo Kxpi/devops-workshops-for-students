@@ -6,8 +6,8 @@ on:
       - "v*"
 
 jobs:
-  pre-release:
-    name: "Pre Release"
+  tagged-release:
+    name: "Tagged Release"
     runs-on: ubuntu-20.04
 
     steps:
@@ -20,7 +20,7 @@ jobs:
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          repo_token: "${{ secrets.AUTH_TOKEN }}"
           prerelease: false
           files: |
             dist/*.whl
