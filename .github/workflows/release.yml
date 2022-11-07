@@ -11,9 +11,11 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
+      - name: ls
+        run: ls
+    
       - name: Build project with setuptool
         run: |
-          ls
           python -m pip install .
           python setup.py bdist_wheel
 
